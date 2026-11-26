@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-      <h1>Il mio IP pubblico</h1>
+    
       <Ipfy />
     </>
   );

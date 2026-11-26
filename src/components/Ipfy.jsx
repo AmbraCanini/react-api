@@ -2,12 +2,19 @@ import { useState } from 'react'
 
 
 function Ipify() {
+const [ip, setIp] = useState("");
+    function getIp() {
+    fetch("https://api.ipify.org/?format=json")
+       .then(response => response.json())
+            .then(data => setIp(data.ip));
+}
 
     return (
-        const [ip, setIp] = useState("");
+        
         <>
             <h1>Il mio IP pubblico</h1>
-            <button>Scopri il mio IP</button>
+            <button onClick={getIp}>Scopri il mio IP</button>
+            <p>{ip}</p>
         </>
     );
 }
